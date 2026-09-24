@@ -1,1 +1,463 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+:root {
+  --primary: #0b4f71;
+  --primary-dark: #073854;
+  --accent: #00a9a5;
+
+  --page-bg: #eef4f7;
+  --card-bg: #ffffff;
+
+  --text: #102a43;
+  --muted: #6b7c8f;
+
+  --border: #d8e2e8;
+  --danger: #d93025;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf5f8,
+      #f8fbfc
+    );
+
+  color: var(--text);
+}
+
+.form-page {
+  min-height: 100vh;
+
+  padding:
+    32px
+    16px
+    50px;
+}
+
+.form-container {
+  width: min(
+    100%,
+    680px
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.form-header-card {
+  background: var(--card-bg);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  margin-bottom: 16px;
+
+  box-shadow:
+    0 6px 20px
+    rgba(
+      15,
+      52,
+      72,
+      0.07
+    );
+}
+
+.top-line {
+  height: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--accent)
+    );
+}
+
+.header-content {
+  padding:
+    24px
+    22px;
+}
+
+.brand-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #e7f7f6;
+
+  border-radius: 12px;
+
+  font-size: 25px;
+}
+
+.form-header-card h1 {
+  font-size: 26px;
+
+  line-height: 1.2;
+
+  color: var(--primary-dark);
+}
+
+.academy-name {
+  margin-top: 6px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: var(--accent);
+}
+
+.header-note {
+  margin-top: 20px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid
+    #edf0f2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.header-note strong {
+  font-size: 15px;
+}
+
+.header-note span {
+  font-size: 13px;
+
+  color: var(--muted);
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   QUESTION CARD
+========================= */
+
+.question-card {
+  background: var(--card-bg);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  padding:
+    24px
+    22px;
+
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 3px 12px
+    rgba(
+      15,
+      52,
+      72,
+      0.04
+    );
+}
+
+.question-card label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.question-card label span {
+  color: var(--danger);
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.question-card input,
+.question-card select {
+  width: 100%;
+
+  border: none;
+
+  border-bottom:
+    1px solid
+    #bcc9d1;
+
+  outline: none;
+
+  background: transparent;
+
+  padding:
+    11px
+    2px;
+
+  font-size: 14px;
+
+  color: var(--text);
+
+  transition:
+    border-color
+    0.2s;
+}
+
+.question-card input:focus,
+.question-card select:focus {
+  border-bottom:
+    2px solid
+    var(--accent);
+}
+
+.question-card input::placeholder {
+  color: #9aa7b2;
+}
+
+.input-help {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.form-error {
+  min-height: 20px;
+
+  margin:
+    5px
+    3px
+    10px;
+
+  color: var(--danger);
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.form-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 15px;
+
+  margin-top: 10px;
+}
+
+.submit-btn {
+  min-width: 145px;
+
+  height: 44px;
+
+  padding:
+    0
+    24px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--accent)
+    );
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform
+    0.2s,
+    box-shadow
+    0.2s;
+}
+
+.submit-btn:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 6px 16px
+    rgba(
+      0,
+      169,
+      165,
+      0.22
+    );
+}
+
+.clear-btn {
+  border: none;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  text-decoration: underline;
+}
+
+.required-note {
+  margin-top: 15px;
+
+  color: var(--danger);
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-note {
+  margin-top: 30px;
+
+  text-align: center;
+
+  color: var(--muted);
+}
+
+.footer-note p {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: var(--primary);
+}
+
+.footer-note span {
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (
+  max-width: 600px
+) {
+
+  .form-page {
+    padding:
+      18px
+      10px
+      35px;
+  }
+
+  .header-content {
+    padding:
+      20px
+      16px;
+  }
+
+  .form-header-card h1 {
+    font-size: 21px;
+  }
+
+  .question-card {
+    padding:
+      20px
+      16px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .clear-btn {
+    width: 100%;
+
+    padding: 10px;
+  }
+
+}
