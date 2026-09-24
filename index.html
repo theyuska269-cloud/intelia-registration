@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>IT Specialist Təlimi | Intelia Academy</title>
+
+  <link rel="stylesheet" href="./qeydiyyat.css">
+</head>
+
+<body>
+
+  <div class="form-page">
+
+    <div class="form-container">
+
+      <!-- BAŞLIQ -->
+      <div class="form-header-card">
+
+        <div class="top-line"></div>
+
+        <div class="header-content">
+
+          <div class="brand-row">
+            <div class="brand-icon">🚀</div>
+
+            <div>
+              <h1>IT Specialist Təlimi</h1>
+              <p class="academy-name">INTELIA ACADEMY</p>
+            </div>
+          </div>
+
+          <div class="header-note">
+            <strong>Qeydiyyat forması</strong>
+            <span>
+              Təlimə qoşulmaq üçün aşağıdakı məlumatları doldurun.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORM -->
+      <form id="registrationStep1Form">
+
+        <!-- AD SOYAD -->
+        <div class="question-card">
+
+          <label for="fullName">
+            Ad Soyad
+            <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Ad və soyadınızı yazın"
+            autocomplete="name"
+            required
+          >
+
+        </div>
+
+
+        <!-- TELEFON -->
+        <div class="question-card">
+
+          <label for="phone">
+            Əlaqə nömrəsi
+            <span>*</span>
+          </label>
+
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+994 50 000 00 00"
+            autocomplete="tel"
+            required
+          >
+
+        </div>
+
+
+        <!-- TƏHSİL -->
+        <div class="question-card">
+
+          <label for="education">
+            Təhsil
+            <span>*</span>
+          </label>
+
+          <select
+            id="education"
+            name="education"
+            required
+          >
+
+            <option value="">
+              Təhsil səviyyəsini seçin
+            </option>
+
+            <option value="Orta">
+              Orta
+            </option>
+
+            <option value="Orta ixtisas">
+              Orta ixtisas
+            </option>
+
+            <option value="Universitet tələbəsi">
+              Universitet tələbəsi
+            </option>
+
+            <option value="Ali">
+              Ali
+            </option>
+
+            <option value="Magistr">
+              Magistr
+            </option>
+
+            <option value="Digər">
+              Digər
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- UNİVERSİTET -->
+        <div class="question-card">
+
+          <label for="university">
+            Universitet
+            <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="university"
+            name="university"
+            placeholder="Universitetin adını yazın"
+            required
+          >
+
+          <small class="input-help">
+            Oxuyursunuzsa və ya bitirmisinizsə, universitetin adını qeyd edin.
+          </small>
+
+        </div>
+
+
+        <!-- İXTİSAS -->
+        <div class="question-card">
+
+          <label for="specialty">
+            İxtisas
+            <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="specialty"
+            name="specialty"
+            placeholder="Universitet ixtisasınızı yazın"
+            required
+          >
+
+        </div>
+
+
+        <!-- ERROR -->
+        <p
+          id="formError"
+          class="form-error"
+        ></p>
+
+
+        <!-- BUTTONS -->
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+            Davam et
+          </button>
+
+
+          <button
+            type="button"
+            id="clearBtn"
+            class="clear-btn"
+          >
+            Formu təmizlə
+          </button>
+
+        </div>
+
+
+        <p class="required-note">
+          * Vacib sahələr
+        </p>
+
+      </form>
+
+
+      <div class="footer-note">
+
+        <p>
+          Intelia Academy
+        </p>
+
+        <span>
+          Məlumatlarınız yalnız qeydiyyat məqsədilə istifadə olunur.
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="./qeydiyyat.js"></script>
+
+</body>
+</html>
