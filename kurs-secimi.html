@@ -1,121 +1,170 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kurs seçimi - Intelia Academy</title>
+<title>Qrup seçimi - Intelia Academy</title>
+
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background:#eef4f7;
-    padding:30px;
+
+body{
+font-family:Arial,sans-serif;
+background:#eef4f7;
+padding:30px;
 }
 
-.container {
-    max-width:600px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
+
+.container{
+
+max-width:600px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:15px;
+
 }
 
-h1 {
-    color:#005b70;
+
+h1{
+color:#005b70;
 }
 
-.course {
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    margin:10px 0;
-    cursor:pointer;
+
+.group{
+
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+margin:10px 0;
+
 }
 
-.course:hover {
-    background:#e8f7f7;
+
+button{
+
+width:100%;
+padding:15px;
+background:#007f83;
+color:white;
+border:none;
+border-radius:8px;
+margin-top:20px;
+font-size:16px;
+
 }
 
-button {
-    width:100%;
-    padding:15px;
-    background:#007f83;
-    color:white;
-    border:none;
-    border-radius:8px;
-    margin-top:20px;
-}
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<h1>📚 Kurs seçimi</h1>
 
-<p>Növbəti mərhələ üçün kurs seçin.</p>
+<h1>👥 Qrup seçimi</h1>
 
 
-<div class="course">
-<input type="radio" name="course" value="IT Specialist">
-IT Specialist
+<p>Uyğun qrup seçin.</p>
+
+
+
+<div class="group">
+
+<input type="radio" name="group" value="Qrup A">
+
+Qrup A (Həftə içi)
+
 </div>
 
 
-<div class="course">
-<input type="radio" name="course" value="Web Development">
-Web Development
+
+<div class="group">
+
+<input type="radio" name="group" value="Qrup B">
+
+Qrup B (Həftə sonu)
+
 </div>
 
 
-<div class="course">
-<input type="radio" name="course" value="Digital Marketing">
-Digital Marketing
+
+<div class="group">
+
+<input type="radio" name="group" value="Qrup C">
+
+Qrup C (Axşam)
+
 </div>
+
 
 
 <button onclick="continueStep()">
+
 Davam et
+
 </button>
 
 
+
 </div>
+
+
 
 
 <script>
 
+
 function continueStep(){
+
 
 const selected =
 document.querySelector(
-'input[name="course"]:checked'
+'input[name="group"]:checked'
 );
+
 
 
 if(!selected){
 
-alert("Zəhmət olmasa kurs seçin.");
+alert("Zəhmət olmasa qrup seçin.");
+
 return;
 
 }
 
 
+
 localStorage.setItem(
-"selectedCourse",
+"selectedGroup",
 selected.value
 );
 
 
+
+alert(
+"Qrup seçildi. Qeydiyyat tamamlanır."
+);
+
+
+
 window.location.href =
-"./qrup-secimi.html";
+"./tesdiq.html";
+
 
 }
+
 
 </script>
 
 
 </body>
+
 </html>
