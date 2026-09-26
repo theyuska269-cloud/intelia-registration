@@ -5,19 +5,13 @@
 
 
 const registrationForm =
-  document.getElementById(
-    "registrationStep1Form"
-  );
+  document.getElementById("registrationStep1Form");
 
 const clearBtn =
-  document.getElementById(
-    "clearBtn"
-  );
+  document.getElementById("clearBtn");
 
 const formError =
-  document.getElementById(
-    "formError"
-  );
+  document.getElementById("formError");
 
 
 const STORAGE_KEY =
@@ -29,29 +23,19 @@ const STORAGE_KEY =
 ========================================= */
 
 const fullNameInput =
-  document.getElementById(
-    "fullName"
-  );
+  document.getElementById("fullName");
 
 const phoneInput =
-  document.getElementById(
-    "phone"
-  );
+  document.getElementById("phone");
 
 const educationInput =
-  document.getElementById(
-    "education"
-  );
+  document.getElementById("education");
 
 const universityInput =
-  document.getElementById(
-    "university"
-  );
+  document.getElementById("university");
 
 const specialtyInput =
-  document.getElementById(
-    "specialty"
-  );
+  document.getElementById("specialty");
 
 
 /* =========================================
@@ -63,14 +47,10 @@ function loadSavedData() {
   try {
 
     const saved =
-      localStorage.getItem(
-        STORAGE_KEY
-      );
+      localStorage.getItem(STORAGE_KEY);
 
 
-    if (!saved) {
-      return;
-    }
+    if (!saved) return;
 
 
     const data =
@@ -80,23 +60,20 @@ function loadSavedData() {
     fullNameInput.value =
       data.fullName || "";
 
-
     phoneInput.value =
       data.phone || "";
-
 
     educationInput.value =
       data.education || "";
 
-
     universityInput.value =
       data.university || "";
-
 
     specialtyInput.value =
       data.specialty || "";
 
-  } catch (error) {
+
+  } catch(error){
 
     console.error(
       "Məlumat oxuna bilmədi:",
@@ -108,28 +85,25 @@ function loadSavedData() {
 }
 
 
+
 /* =========================================
    VALIDATE PHONE
 ========================================= */
 
-function validatePhone(phone) {
+function validatePhone(phone){
 
   const cleanPhone =
-    phone.replace(
-      /\s+/g,
-      ""
-    );
+    phone.replace(/\s+/g,"");
 
 
   const phoneRegex =
     /^(\+994|0)(50|51|55|70|77|99|10)[0-9]{7}$/;
 
 
-  return phoneRegex.test(
-    cleanPhone
-  );
+  return phoneRegex.test(cleanPhone);
 
 }
+
 
 
 /* =========================================
@@ -137,153 +111,139 @@ function validatePhone(phone) {
 ========================================= */
 
 registrationForm.addEventListener(
-  "submit",
-  function (event) {
-
-    event.preventDefault();
+"submit",
+function(event){
 
 
-    formError.textContent = "";
+event.preventDefault();
 
 
-    const fullName =
-      fullNameInput.value.trim();
+formError.textContent="";
 
 
-    const phone =
-      phoneInput.value.trim();
+const fullName =
+fullNameInput.value.trim();
 
 
-    const education =
-      educationInput.value;
+const phone =
+phoneInput.value.trim();
 
 
-    const university =
-      universityInput.value.trim();
+const education =
+educationInput.value;
 
 
-    const specialty =
-      specialtyInput.value.trim();
+const university =
+universityInput.value.trim();
 
 
-    /* =====================
-       EMPTY CHECK
-    ===================== */
-
-    if (
-      !fullName ||
-      !phone ||
-      !education ||
-      !university ||
-      !specialty
-    ) {
-
-      formError.textContent =
-        "Zəhmət olmasa bütün vacib sahələri doldurun.";
-
-      return;
-
-    }
+const specialty =
+specialtyInput.value.trim();
 
 
-    /* =====================
-       FULL NAME CHECK
-    ===================== */
 
-    if (
-      fullName.length < 5 ||
-      !fullName.includes(" ")
-    ) {
+/* EMPTY CHECK */
 
-      formError.textContent =
-        "Ad və soyadınızı tam daxil edin.";
+if(
+!fullName ||
+!phone ||
+!education ||
+!university ||
+!specialty
+){
 
-      fullNameInput.focus();
+formError.textContent =
+"Zəhmət olmasa bütün vacib sahələri doldurun.";
 
-      return;
+return;
 
-    }
-
-
-    /* =====================
-       PHONE CHECK
-    ===================== */
-
-    if (
-      !validatePhone(phone)
-    ) {
-
-      formError.textContent =
-        "Telefon nömrəsini düzgün daxil edin. Məsələn: +994 50 123 45 67";
-
-      phoneInput.focus();
-
-      return;
-
-    }
+}
 
 
-    /* =====================
-       DATA
-    ===================== */
 
-    const registrationData = {
+/* NAME CHECK */
 
-      fullName:
-        fullName,
+if(
+fullName.length < 5 ||
+!fullName.includes(" ")
+){
 
-      phone:
-        phone,
+formError.textContent =
+"Ad və soyadınızı tam daxil edin.";
 
-      education:
-        education,
+fullNameInput.focus();
 
-      university:
-        university,
+return;
 
-      specialty:
-        specialty,
-
-      createdAt:
-        new Date()
-          .toISOString()
-
-    };
+}
 
 
-    /* =====================
-       SAVE
-    ===================== */
 
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(
-        registrationData
-      )
-    );
+/* PHONE CHECK */
 
+if(
+!validatePhone(phone)
+){
 
-    /* =====================
-       NEXT STEP
-    ===================== */
+formError.textContent =
+"Telefon nömrəsini düzgün daxil edin.";
 
-    alert(
-      "Məlumatlar yadda saxlanıldı. Növbəti mərhələ kurs və qrup seçimidir."
-    );
+phoneInput.focus();
+
+return;
+
+}
 
 
-    /*
-      Növbəti mərhələni
-      hazırlayanda burada:
 
-      window.location.href =
-        "./kurs-secimi.html";
+/* DATA */
 
-      yazacağıq.
-    */
+const registrationData = {
 
-  }
+
+fullName: fullName,
+
+phone: phone,
+
+education: education,
+
+university: university,
+
+specialty: specialty,
+
+createdAt:
+new Date().toISOString()
+
+};
+
+
+
+/* SAVE */
+
+localStorage.setItem(
+STORAGE_KEY,
+JSON.stringify(registrationData)
 );
+
+
+
+/* NEXT STEP */
+
+alert(
+"Məlumatlar yadda saxlanıldı. Növbəti mərhələ kurs və qrup seçimidir."
+);
+
+
+
+/* BURASI YENİ ƏLAVƏ OLUNDU */
+
+window.location.href =
+"./kurs-secimi.html";
+
+
+});
+
+
 
 
 /* =========================================
@@ -291,58 +251,61 @@ registrationForm.addEventListener(
 ========================================= */
 
 clearBtn.addEventListener(
-  "click",
-  function () {
-
-    const confirmClear =
-      confirm(
-        "Formdakı məlumatları silmək istəyirsiniz?"
-      );
+"click",
+function(){
 
 
-    if (!confirmClear) {
-      return;
-    }
-
-
-    registrationForm.reset();
-
-
-    localStorage.removeItem(
-      STORAGE_KEY
-    );
-
-
-    formError.textContent = "";
-
-  }
+const confirmClear =
+confirm(
+"Formdakı məlumatları silmək istəyirsiniz?"
 );
+
+
+if(!confirmClear) return;
+
+
+registrationForm.reset();
+
+
+localStorage.removeItem(
+STORAGE_KEY
+);
+
+
+formError.textContent="";
+
+
+});
+
+
 
 
 /* =========================================
    CLEAR ERROR WHILE TYPING
 ========================================= */
 
+
 [
-  fullNameInput,
-  phoneInput,
-  educationInput,
-  universityInput,
-  specialtyInput
+fullNameInput,
+phoneInput,
+educationInput,
+universityInput,
+specialtyInput
+
 ].forEach(
-  function (input) {
+function(input){
 
-    input.addEventListener(
-      "input",
-      function () {
+input.addEventListener(
+"input",
+function(){
 
-        formError.textContent = "";
+formError.textContent="";
 
-      }
-    );
+});
 
-  }
-);
+});
+
+
 
 
 /* =========================================
