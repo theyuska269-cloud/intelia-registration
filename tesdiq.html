@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Qeydiyyat tamamlandı - Intelia Academy</title>
+
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef4f7;
+padding:30px;
+}
+
+
+.container{
+
+max-width:600px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+
+}
+
+
+h1{
+
+color:#007f83;
+
+}
+
+
+.info{
+
+text-align:left;
+background:#f5f7f8;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+
+}
+
+
+button{
+
+width:100%;
+padding:15px;
+margin-top:25px;
+background:#007f83;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>✅ Qeydiyyat tamamlandı</h1>
+
+
+<p>
+Məlumatlarınız uğurla qəbul edildi.
+</p>
+
+
+
+<div class="info">
+
+<p>
+<strong>Ad Soyad:</strong>
+<span id="name"></span>
+</p>
+
+
+<p>
+<strong>Telefon:</strong>
+<span id="phone"></span>
+</p>
+
+
+<p>
+<strong>Kurs:</strong>
+<span id="course"></span>
+</p>
+
+
+<p>
+<strong>Qrup:</strong>
+<span id="group"></span>
+</p>
+
+
+</div>
+
+
+
+<button onclick="finish()">
+Bağla
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const data =
+JSON.parse(
+localStorage.getItem(
+"inteliaRegistrationStep1"
+)
+);
+
+
+
+if(data){
+
+document.getElementById("name").textContent =
+data.fullName;
+
+
+document.getElementById("phone").textContent =
+data.phone;
+
+}
+
+
+
+document.getElementById("course").textContent =
+localStorage.getItem("selectedCourse") || "-";
+
+
+document.getElementById("group").textContent =
+localStorage.getItem("selectedGroup") || "-";
+
+
+
+function finish(){
+
+alert(
+"Təşəkkür edirik. Sizinlə əlaqə saxlanılacaq."
+);
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
